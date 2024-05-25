@@ -2,8 +2,8 @@ using System.Net.Security;
 using System.Xml;
 
 public class Entry
-    // Aided by ChatGPT
-{
+    // Aided by ChatGPT and Levi Jones
+    {
     // // Testing stuff out
     // public void Hello(){
     //     Console.WriteLine("hello world!");
