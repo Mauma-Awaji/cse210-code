@@ -39,6 +39,6 @@ class Program
         DisplayWelcome();
         string name = PromptUserName();
         int square = SquareNumber(PromptUserNumber());
-        DisplayResult(name, square);             
+        DisplayResult(name, square);           
     }
 }
