@@ -1,6 +1,6 @@
 public class Prompt
 {
-    // Aided by ChatGPT
+// Aided by ChatGPT and Levi Jones
     //List of prompts
     public List<string> _prompts = new List<string>
     {

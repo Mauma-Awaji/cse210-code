@@ -2,7 +2,7 @@ using System.Net.Security;
 using System.Xml;
 
 public class Entry
-    // Aided by ChatGPT and Levi Jones
+    // Aided by ChatGPT, Bro Gibbons and Levi Jones
     {
     // // Testing stuff out
     // public void Hello(){

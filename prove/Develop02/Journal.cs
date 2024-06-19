@@ -1,5 +1,7 @@
 using System.IO;
 
+// Aided by ChatGPT and Levi Jones
+
 public class Journal{
 
     // List that'll contain the user's entries before they are added to the txt file
