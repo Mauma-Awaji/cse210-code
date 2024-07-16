@@ -1,0 +1,4 @@
+150
+SimpleGoal|Talk|give a talk|50|True
+EternalGoal|Scriptures|read scripture for 10mins|50|1
+ChecklistGoal|Temple|visit the temple 3 times|50|150|3|1
