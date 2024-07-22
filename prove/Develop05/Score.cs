@@ -19,6 +19,6 @@ public class Score
 
        public void ShowScore()
     {
-        Console.WriteLine($"You have {_totalScore} points");
+        Console.WriteLine($"You have {_totalScore} points.");
     }
 }
