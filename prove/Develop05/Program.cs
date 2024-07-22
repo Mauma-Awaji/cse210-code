@@ -88,8 +88,8 @@ class Program
         // Console.WriteLine();
 
         // Main Program Starts
-        int option = 0;
-        while (option != 6)
+        string option = "0";
+        while (option != "6")
         {
             _score.ShowScore();
             Console.WriteLine();
@@ -100,59 +100,69 @@ class Program
         
 
             Console.Write("Select a choice from the menu: ");
-            option = int.Parse(Console.ReadLine());
-            if (option == 1)
+            option = Console.ReadLine();
+            if (option == "1")
             {
-                Console.WriteLine("The types of goals are:");
-                Console.WriteLine("  1. Simple Goal");
-                Console.WriteLine("  2. Eternal Goal");
-                Console.WriteLine("  3. Checklist Goal");
-                Console.Write("Which type of goal would you like to create? ");            
-                int goalType = int.Parse(Console.ReadLine());
-                if (goalType == 1)
+                
+           
+                string goalType = "";
+                while (goalType != "1" || goalType != "2" || goalType != "3")
                 {
-                    Console.Write("What is the name of your goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.Write("What is a short description of it? ");
-                    string goalDescription = Console.ReadLine();
-                    Console.Write("What is the amount of points associated with this goal? ");
-                    int points = int.Parse(Console.ReadLine());
-                    SimpleGoal simple = new(goalName, goalDescription, points);
-                    _goals.Add(simple);
+                    Console.WriteLine("The types of goals are:");
+                    Console.WriteLine("  1. Simple Goal");
+                    Console.WriteLine("  2. Eternal Goal");
+                    Console.WriteLine("  3. Checklist Goal");
+                    Console.Write("Which type of goal would you like to create? "); 
+                    goalType = Console.ReadLine();
+                    if (goalType == "1")
+                    {
+                        Console.Write("What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int points = int.Parse(Console.ReadLine());
+                        SimpleGoal simple = new(goalName, goalDescription, points);
+                        _goals.Add(simple);
+                        break;
+                    }
+                    else if (goalType == "2")        
+                    {
+                        Console.Write("What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int points = int.Parse(Console.ReadLine());
+                        EternalGoal eternal = new(goalName, goalDescription, points);
+                        _goals.Add(eternal);
+                        break;
+                    }
+                    else if (goalType == "3")
+                    {   
+                        Console.Write("What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int points = int.Parse(Console.ReadLine());
+                        Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                        int checklistNumber = int.Parse(Console.ReadLine());
+                        Console.Write("What is the bonus for accomplishing it that many times? ");
+                        int bonusPoints = int.Parse(Console.ReadLine());
+                        ChecklistGoal checklist = new(goalName, goalDescription, checklistNumber, points, bonusPoints);  
+                        _goals.Add(checklist);
+                        break;                  
+                    }
+                    else
+                    {
+                        Console.WriteLine("I'm sorry. You did not enter a valid option.");
+                    }
                 }
-                else if (goalType == 2)        
-                {
-                    Console.Write("What is the name of your goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.Write("What is a short description of it? ");
-                    string goalDescription = Console.ReadLine();
-                    Console.Write("What is the amount of points associated with this goal? ");
-                    int points = int.Parse(Console.ReadLine());
-                    EternalGoal eternal = new(goalName, goalDescription, points);
-                    _goals.Add(eternal);
-                }
-                else if (goalType == 3)
-                {   
-                    Console.Write("What is the name of your goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.Write("What is a short description of it? ");
-                    string goalDescription = Console.ReadLine();
-                    Console.Write("What is the amount of points associated with this goal? ");
-                    int points = int.Parse(Console.ReadLine());
-                    Console.Write("How many times does this goal need to be accomplished for a bonus? ");
-                    int checklistNumber = int.Parse(Console.ReadLine());
-                    Console.Write("What is the bonus for accomplishing it that many times? ");
-                    int bonusPoints = int.Parse(Console.ReadLine());
-                    ChecklistGoal checklist = new(goalName, goalDescription, checklistNumber, points, bonusPoints);  
-                    _goals.Add(checklist);                  
-                }
-                else
-                {
-                    Console.WriteLine("I'm sorry. You did not enter a valid option.");
-                }
-                               
+                
+                            
             }
-            else if (option == 2)
+            else if (option == "2")
             {
                 int count = 1;
                 Console.WriteLine("The goals are: ");
@@ -165,17 +175,17 @@ class Program
                 }
                 Console.WriteLine();
             }
-            else if (option == 3)
+            else if (option == "3")
             {
                 Program.SaveFile();
                 Console.WriteLine();
             }
-            else if (option == 4)
+            else if (option == "4")
             {
                 Program.LoadFile();
                 Console.WriteLine();
             }
-            else if (option == 5)
+            else if (option == "5")
             {
                 int count = 1;
                 Console.WriteLine("The goals are: ");
@@ -192,14 +202,14 @@ class Program
                 Console.WriteLine();
 
             }
-            else if (option == 6)
+            else if (option == "6")
             {
                 // Exit the program
             }
             else 
             {
                 Console.WriteLine("\nI'm sorry. You did not enter a valid option.\n");
-            }
+            }           
         }// bracket was here
     }
 }
